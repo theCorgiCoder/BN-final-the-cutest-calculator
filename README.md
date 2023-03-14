@@ -1,11 +1,11 @@
-## JS Calculator with STYLE
+# JS Calculator with STYLE
 
-# Developer: Elaine B. aka CorgiCoder
+## Developer: Elaine B. aka CorgiCoder
 
-# The Project
+## The Project
 
 I wanted to practice javascript by building a calculator application.
 
-# Live Site Link
+## Live Site Link
 
 [Link to live Site](https://thecorgicoder.github.io/BN-final-the-cutest-calculator/)
