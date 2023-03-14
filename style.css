@@ -1,3 +1,133 @@
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+   
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.ear-container {
+    display: flex;
+    width: 340px;
+    justify-content: space-around;
+}
+
+.ear {
+    margin-bottom: -20px;
+}
+
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    width: 340px;
+    height: 500px;
+    border-radius: 31px;
+    background-color: #E3C5F5;
+    padding: 20px;
+    box-shadow: -5px 10px #C766BD;
+}
+
+.screen {
+    flex: 1;
+    position: relative;
+    display: flex;
+    margin: 10px 0 10px 0;
+    border-radius: 18px;
+    background-color: #BAFAF2;
+    margin-bottom: 20px;
+    box-shadow: 3px -6px #C766BD;
+    overflow: hidden;
+}
+
+#reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    width: auto;
+    opacity: 0.5;
+}
+
+#display-number {
+    color:#1B6A6A;
+    font-size: 50px;
+    text-align: right;
+    width: 100%;
+    margin: 15px 10px 15px 10px;
+}
+
+.keypad-container {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60px;
+}
+
+.button {
+    width: 60px;
+    height: 36px;
+    border-radius: 4px 5px 10px 10px;
+    border: 3px solid #A65398;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: -3px 3px #A65398;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.clear-button {
+    border-color: #A12459;
+    box-shadow: -3px 3px #A12459;
+    background-color: #DC508B;
+    color: #ffffff;
+}
+
+.math-button {
+    border-color: #35ABAB;
+    box-shadow: -3px 3px #35ABAB;
+    background-color: #75DCD0;
+    color: #ffffff;
+}
+
+.addition-button {
+    padding: 0;
+    margin: 0 0 -18px 0;
+    background-color: transparent;
+    border: none;
+}
+
+.tail {
+    z-index: 15;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 3px solid #C766BD;
+    border-radius: 100%;
+    box-shadow: -5px 4px #C766BD;
 }
