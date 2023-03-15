@@ -1,5 +1,5 @@
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: 'Patrick Hand SC', cursive;
 }
 
@@ -30,7 +30,7 @@ body {
     margin-bottom: -20px;
 }
 
-.calculator-body {
+.calculator {
     display: flex;
     flex-direction: column;
     z-index: 5;
@@ -42,7 +42,7 @@ body {
     box-shadow: -5px 10px #C766BD;
 }
 
-.screen {
+.calculator-display {
     flex: 1;
     position: relative;
     display: flex;
@@ -54,7 +54,7 @@ body {
     overflow: hidden;
 }
 
-#reflection {
+#display-highlight {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,7 +87,7 @@ body {
     width: 60px;
 }
 
-.button {
+button {
     width: 60px;
     height: 36px;
     border-radius: 4px 5px 10px 10px;
@@ -99,8 +99,8 @@ body {
     padding-bottom: 10px;
 }
 
-#animated-button:active {
-    transform: scale(1.08);
+.animated-button:active {
+    transform: scale(1.05);
 }
 
 .clear-button {
@@ -110,18 +110,19 @@ body {
     color: #ffffff;
 }
 
-.math-button {
+.math-operation {
     border-color: #35ABAB;
     box-shadow: -3px 3px #35ABAB;
     background-color: #75DCD0;
     color: #ffffff;
 }
 
-.addition-button {
+#addition-button {
     padding: 0;
-    margin: 0 0 -18px 0;
+    margin: 0 0 55px 0;
     background-color: transparent;
     border: none;
+    box-shadow: none;
 }
 
 .tail {
