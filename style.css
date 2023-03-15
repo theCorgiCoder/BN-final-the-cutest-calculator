@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-family: 'Patrick Hand SC', cursive;
 }
 
@@ -64,7 +64,7 @@ body {
     opacity: 0.5;
 }
 
-#display-number {
+.display-number {
     color:#1B6A6A;
     font-size: 50px;
     text-align: right;
@@ -72,7 +72,7 @@ body {
     margin: 15px 10px 15px 10px;
 }
 
-.keypad-container {
+.calculator-keypad {
     flex: 3;
     display: flex;
     flex-direction: row;
