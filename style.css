@@ -71,11 +71,25 @@ main {
 }
 
 .output{
-    color:#1B6A6A;
-    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
     text-align: right;
     width: 100%;
-    margin: 15px 10px 15px 10px;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    font-size: 1.5rem;
+    color:rgba(27, 106, 106, 0.70);
+}
+
+.output .current-operand {
+    color:#1B6A6A;
+    font-size: 2.5rem;
 }
 
 .calculator-keypad {
@@ -94,18 +108,17 @@ main {
 }
 
 button {
-    width: 60px;
-    height: 36px;
+    width: 70px;
+    height: 40px;
     border-radius: 4px 5px 10px 10px;
     border: 3px solid #A65398;
     background-color: #ffffff;
     color: #000000;
     box-shadow: -3px 3px #A65398;
-    font-size: 20px;
-    padding-bottom: 10px;
+    font-size: 1.2rem;
 }
 
-.animated-button:active {
+button:active {
     transform: scale(1.05);
 }
 
@@ -116,19 +129,41 @@ button {
     color: #ffffff;
 }
 
-.math-operation {
+.clear-button:hover {
+    border-color: #DC508B;
+    background-color: #EEA8C5;
+    box-shadow: -3px 3px #DC508B;
+}
+
+.operation-btn {
     border-color: #35ABAB;
     box-shadow: -3px 3px #35ABAB;
     background-color: #75DCD0;
     color: #ffffff;
 }
 
-#addition-button {
+.operation-btn:hover {
+    border-color: #3593ab;
+    box-shadow: -3px 3px #3593ab;
+    background-color: #92e1e6;
+}
+
+.num-btn:hover {
+    border-radius: 4px 5px 10px 10px;
+    border: 3px solid #8e5eb3;
+    box-shadow: -3px 3px #8e5eb3;
+    background-color: #edfdff;
+    color: #000000;
+
+}
+
+.carrot-btn {
     padding: 0;
-    margin: 0 0 55px 0;
+    margin-bottom: 3em;
     background-color: transparent;
     border: none;
     box-shadow: none;
+
 }
 
 .tail {
