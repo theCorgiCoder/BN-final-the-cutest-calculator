@@ -17,75 +17,73 @@
         <div class="calculator">
             <div class="calculator-display">
                 <img id="display-highlight" src="./assets/images/display-highlight.svg">
-                <div class="output">
-                    <div class="previous-operand" data-type="previous-operand">345 +</div>
-                    <div class="current-operand" data-type="current-operand">587</div>
-                </div>
+                <div id="display"></div>
             </div>
             <div class="calculator-keypad">
-                <div class="button-column">
-                    <button class="clear-button" data-type="clear">
+                <div class="column">
+                    <button class="clear-all" data-value="clear">
                         C/CE
                     </button>
                     </button>
-                    <button class="num-btn" value="7" data-type="number">
+                    <button class="number">
                         7
                     </button>
-                    <button class="num-btn" value="4" data-type="number">
+                    <button class="number">
                         4
                     </button>
-                    <button class="num-btn" value="1" data-type="number">
+                    <button class="number">
                         1
                     </button>
-                    <button class="num-btn" value="0" data-type="number">
+                    <button class="number">
                         0
                     </button>
                 </div>
-                <div class="button-column">
-                    <button class="operation-btn" data-type="delete">
+                <div class="column">
+                    <button class="delete">
                         DEL
                     </button>
-                    <button class="num-btn" value="8" data-type="number">
+                    <button class="number">
                         8
                     </button>
-                    <button class="num-btn" value="5" data-type="number">
+                    <button class="number">
                         5
                     </button>
-                    <button class="num-btn" value="2" data-type="number">
+                    <button class="number">
                         2
                     </button>
-                    <button class="operation-btn" value="." data-type="operator">
+                    <button class="operation-btn decimal">
                         .
                     </button>
                 </div>
-                <div class="button-column">
-                    <button class="operation-btn" value="%" data-type="operator">
+                <div class="column">
+                    <button class="operation-btn operator">
                         %
                     </button>
-                    <button class="num-btn" value="9" data-type="number">
+                    <button class="number">
                         9
                     </button>
-                    <button class="num-btn" value="6" data-type="number">
+                    <button class="number">
                         6
                     </button>
-                    <button class="num-btn" value="3" data-type="number">
+                    <button class="number">
                         3
                     </button>
-                    <button class="operation-btn" value="=" data-type="operator">
+                    <button class="operation-btn equals">
                         =
                     </button>
                 </div>
-                <div class="button-column" >
-                    <button class="operation-btn" value="/" data-type="divide">
+                <div class="column" >
+                    <button class="operation-btn operator">
                         ÷
                     </button>
-                    <button class="operation-btn" value="*" data-type="operator">
+                    <button class="operation-btn operator">
                         x
                     </button>
-                    <button class="operation-btn" value="-" data-type="operator">
+                    <button class="operation-btn operator" >
                         -
                     </button>
-                    <button id="carrot-btn" value="" data-type="operator">
+                    <button id="carrot-btn" class="operator" value="+">
+                        <span>+</span>
                         <img 
                             src="./assets/images/carrot_button.svg" 
                             alt="orange carrot with plus sign on it"

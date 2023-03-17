@@ -58,6 +58,7 @@ main {
     margin-bottom: 20px;
     box-shadow: 3px -6px #C766BD;
     overflow: hidden;
+    align-items: center;
 }
 
 #display-highlight {
@@ -70,26 +71,15 @@ main {
     opacity: 0.5;
 }
 
-.output{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    text-align: right;
-    width: 100%;
-    padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-}
-
-.output .previous-operand {
-    font-size: 1.5rem;
-    color:rgba(27, 106, 106, 0.70);
-}
-
-.output .current-operand {
+#display {
     color:#1B6A6A;
     font-size: 2.5rem;
+    text-align: right;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 1;
 }
 
 .calculator-keypad {
@@ -100,7 +90,7 @@ main {
 
 }
 
-.button-column {
+.column {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -122,14 +112,14 @@ button:active {
     transform: scale(1.05);
 }
 
-.clear-button {
+.clear-all {
     border-color: #A12459;
     box-shadow: -3px 3px #A12459;
     background-color: #DC508B;
     color: #ffffff;
 }
 
-.clear-button:hover {
+.clear-all:hover {
     border-color: #DC508B;
     background-color: #EEA8C5;
     box-shadow: -3px 3px #DC508B;
@@ -148,22 +138,36 @@ button:active {
     background-color: #92e1e6;
 }
 
-.num-btn:hover {
+.number:hover {
     border-radius: 4px 5px 10px 10px;
     border: 3px solid #8e5eb3;
     box-shadow: -3px 3px #8e5eb3;
     background-color: #edfdff;
     color: #000000;
-
 }
 
-.carrot-btn {
+#carrot-btn {
     padding: 0;
     margin-bottom: 3em;
     background-color: transparent;
     border: none;
     box-shadow: none;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
 
+#carrot-btn > span {
+    position: absolute;
+    z-index: 10;
+    font-size: 2.5rem;
+    color:#fff;
+    margin-top: 0.9em;
+}
+
+#carrot-btn > img {
+    position: relative;
 }
 
 .tail {
