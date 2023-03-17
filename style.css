@@ -1,6 +1,6 @@
 * {
     /* border: 1px solid red; */
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', sans-serif;
 }
 
 body {
@@ -8,9 +8,15 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    background:
+    radial-gradient(#fff 3px, transparent 4px), /* Creates dots*/
+    radial-gradient(#fff 3px, transparent 4px),
+    #c8e7ff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
-.calculator-container {
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +70,7 @@ body {
     opacity: 0.5;
 }
 
-.display-number {
+.output{
     color:#1B6A6A;
     font-size: 50px;
     text-align: right;

@@ -9,7 +9,7 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <main class="calculator-container">
+    <main>
         <div class="ear-container">
             <img src="./assets/images/left_ear.svg" class="ear">
             <img src="./assets/images/right_ear.svg" class="ear">
@@ -17,7 +17,10 @@
         <div class="calculator">
             <div class="calculator-display">
                 <img id="display-highlight" src="./assets/images/display-highlight.svg">
-                <div class="display-number"></div>
+                <div class="output">
+                    <div class="previous-operand"></div>
+                    <div class="current-operand"></div>
+                </div>
             </div>
             <div class="calculator-keypad">
                 <div class="button-column">
