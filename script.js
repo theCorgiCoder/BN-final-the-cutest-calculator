@@ -3,10 +3,17 @@ const buttons = document.querySelectorAll("button");
 const display = document.getElementById("display");
 
 let displayValue = "0";
-let result = ""; // is an empty string or null better?
+let result = null; // is an empty string or null better?
 
 function updateDisplay() {
   display.innerText = displayValue;
+  console.log(
+    "UPDATE: ",
+    "Display: ",
+    display.innerText,
+    "displayValue: ",
+    displayValue
+  );
 }
 //Listens for all button click events and then calls handler function
 function onClick() {
@@ -27,8 +34,8 @@ function onClickHandler(button) {
     } else if (inputValue.contains("operator")) {
       useOperators(innerText);
       updateDisplay();
-    } else if (inputValue.contains("clear")) {
-      inputClearAll(innerText);
+    } else if (inputValue.contains("clear-all")) {
+      clearDisplay(innerText);
       updateDisplay();
     } else if (inputValue.contains("equals")) {
       inputEquals(innerText);
@@ -38,6 +45,13 @@ function onClickHandler(button) {
       updateDisplay();
     } else if (inputValue.contains("delete")) {
       inputDelete();
+      console.log(
+        "DELETE-AFTER: ",
+        "Display: ",
+        display.innerText,
+        "displayValue: ",
+        displayValue
+      );
     } else {
       console.log(innerText);
     }
@@ -56,16 +70,24 @@ function inputNumbers(num) {
 
 function inputDelete() {
   display.innerText = display.innerText.slice(0, -1);
+  return (displayValue = display.innerText);
 }
 
-function inputClearAll() {
-  return console.log("clear all");
+function inputAddDecimal(decimal) {
+  if (!displayValue.includes(decimal)) {
+    if (displayValue === "0" || displayValue === null) {
+      displayValue += decimal;
+    } else {
+      displayValue += decimal;
+    }
+  } else {
+    return;
+  }
 }
 
-function inputAddDecimal() {
-  // don't use more than 1x
-  //limit 0's as 1st number
-  return console.log("add .");
+function clearDisplay() {
+  displayValue = "0";
+  result = null;
 }
 
 function inputEquals() {

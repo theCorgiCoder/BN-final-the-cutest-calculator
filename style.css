@@ -148,7 +148,8 @@ button:active {
 
 #carrot-btn {
     padding: 0;
-    margin-bottom: 3em;
+    height: 20%;
+    margin-bottom: 2em;
     background-color: transparent;
     border: none;
     box-shadow: none;
