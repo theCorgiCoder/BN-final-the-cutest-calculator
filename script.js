@@ -3,9 +3,11 @@ const buttons = document.querySelectorAll("button");
 const display = document.getElementById("display");
 
 let displayValue = "0";
-let result = null; // is an empty string or null better?
+let result = null;
+let operationType = null;
 
 function updateDisplay() {
+  // display.innerText = parseFloat(displayValue).toFixed(6);
   display.innerText = displayValue;
   console.log(
     "UPDATE: ",
@@ -15,14 +17,13 @@ function updateDisplay() {
     displayValue
   );
 }
+onClick();
 //Listens for all button click events and then calls handler function
 function onClick() {
   buttons.forEach((button) => {
     button.addEventListener("click", onClickHandler(button));
   });
 }
-
-onClick();
 
 function onClickHandler(button) {
   button.addEventListener("click", function () {
@@ -45,13 +46,6 @@ function onClickHandler(button) {
       updateDisplay();
     } else if (inputValue.contains("delete")) {
       inputDelete();
-      console.log(
-        "DELETE-AFTER: ",
-        "Display: ",
-        display.innerText,
-        "displayValue: ",
-        displayValue
-      );
     } else {
       console.log(innerText);
     }
@@ -59,12 +53,36 @@ function onClickHandler(button) {
 }
 
 function inputNumbers(num) {
-  //first input
-  //need parameters for if a operator was used
-  if (displayValue === "0" || displayValue === 0) {
-    displayValue = num;
+  //handles first input
+  if (operationType === null) {
+    if (displayValue === "0" || displayValue === 0) {
+      displayValue = num;
+      console.log("num input1", num);
+    } else if (displayValue === num) {
+      displayValue = num;
+      console.log("num input2", num);
+    } else {
+      displayValue += num;
+    }
   } else {
-    displayValue += num;
+    displayValue = num;
+  }
+}
+
+function useOperators(operatorPressed) {
+  if (!display.innerText) {
+    return;
+  }
+  if (operationType !== null) {
+    if (display.innerText === null) {
+      operationType = operatorPressed;
+      console.log("op 1");
+      return;
+    }
+  } else {
+    operationType = operatorPressed;
+    display.innerText = "";
+    console.log("op 2");
   }
 }
 
@@ -88,15 +106,17 @@ function inputAddDecimal(decimal) {
 function clearDisplay() {
   displayValue = "0";
   result = null;
+  operationType = null;
 }
 
 function inputEquals() {
-  return console.log("equals");
-}
+  if (!display.innerText) {
+    return;
+  }
+  result = operate(Number(firstNumber), Number(secondNumber), operatorPressed);
+  displayValue = result;
 
-function useOperators(operator) {
-  //logic for operators
-  result = operate(Number, Number, operator); //result needs to equal the operate function,
+  console.log("equals");
 }
 
 function operate(n1, n2, op) {
