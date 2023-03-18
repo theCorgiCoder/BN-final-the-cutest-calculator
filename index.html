@@ -9,7 +9,7 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <main class="calculator-container">
+    <main>
         <div class="ear-container">
             <img src="./assets/images/left_ear.svg" class="ear">
             <img src="./assets/images/right_ear.svg" class="ear">
@@ -17,72 +17,73 @@
         <div class="calculator">
             <div class="calculator-display">
                 <img id="display-highlight" src="./assets/images/display-highlight.svg">
-                <div class="display-number"></div>
+                <div id="display"></div>
             </div>
             <div class="calculator-keypad">
-                <div class="button-column">
-                    <button class="clear-button animated-button" data-action="clear">
+                <div class="column">
+                    <button class="clear-all" data-value="clear">
                         C/CE
                     </button>
                     </button>
-                    <button class="number-input  animated-button">
+                    <button class="number">
                         7
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         4
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         1
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         0
                     </button>
                 </div>
-                <div class="button-column">
-                    <button class="math-operation animated-button" data-action="negative-positive-integer">
-                        -/+
+                <div class="column">
+                    <button class="delete">
+                        DEL
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         8
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         5
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         2
                     </button>
-                    <button class="math-operation animated-button" data-action="decimal">
+                    <button class="operation-btn decimal">
                         .
                     </button>
                 </div>
-                <div class="button-column">
-                    <button class="math-operation animated-button" data-action="percentage">
+                <div class="column">
+                    <button class="operation-btn operator">
                         %
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         9
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         6
                     </button>
-                    <button class="number-input  animated-button" id="">
+                    <button class="number">
                         3
                     </button>
-                    <button class="math-operation animated-button" data-action="equals">
+                    <button class="operation-btn equals">
                         =
                     </button>
                 </div>
-                <div class="button-column">
-                    <button class="math-operation animated-button" data-action="divide">
+                <div class="column" >
+                    <button class="operation-btn operator">
                         ÷
                     </button>
-                    <button class="math-operation animated-button" data-action="multiply">
+                    <button class="operation-btn operator">
                         x
                     </button>
-                    <button class="math-operation animated-button" data-action="subtract">
+                    <button class="operation-btn operator" >
                         -
                     </button>
-                    <button class="animated-button" id="addition-button" data-action="add">
+                    <button id="carrot-btn" class="operator" value="+">
+                        <span>+</span>
                         <img 
                             src="./assets/images/carrot_button.svg" 
                             alt="orange carrot with plus sign on it"

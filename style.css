@@ -1,6 +1,6 @@
 * {
     /* border: 1px solid red; */
-    font-family: 'Patrick Hand SC', cursive;
+    font-family: 'Patrick Hand SC', sans-serif;
 }
 
 body {
@@ -8,9 +8,15 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    background:
+    radial-gradient(#fff 3px, transparent 4px), /* Creates dots*/
+    radial-gradient(#fff 3px, transparent 4px),
+    #c8e7ff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 }
 
-.calculator-container {
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +58,7 @@ body {
     margin-bottom: 20px;
     box-shadow: 3px -6px #C766BD;
     overflow: hidden;
+    align-items: center;
 }
 
 #display-highlight {
@@ -64,12 +71,15 @@ body {
     opacity: 0.5;
 }
 
-.display-number {
+#display {
     color:#1B6A6A;
-    font-size: 50px;
+    font-size: 2.5rem;
     text-align: right;
     width: 100%;
-    margin: 15px 10px 15px 10px;
+    padding: 0 10px 0 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    line-height: 1;
 }
 
 .calculator-keypad {
@@ -80,7 +90,7 @@ body {
 
 }
 
-.button-column {
+.column {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -88,41 +98,76 @@ body {
 }
 
 button {
-    width: 60px;
-    height: 36px;
+    width: 70px;
+    height: 40px;
     border-radius: 4px 5px 10px 10px;
     border: 3px solid #A65398;
     background-color: #ffffff;
     color: #000000;
     box-shadow: -3px 3px #A65398;
-    font-size: 20px;
-    padding-bottom: 10px;
+    font-size: 1.2rem;
 }
 
-.animated-button:active {
+button:active {
     transform: scale(1.05);
 }
 
-.clear-button {
+.clear-all {
     border-color: #A12459;
     box-shadow: -3px 3px #A12459;
     background-color: #DC508B;
     color: #ffffff;
 }
 
-.math-operation {
+.clear-all:hover {
+    border-color: #DC508B;
+    background-color: #EEA8C5;
+    box-shadow: -3px 3px #DC508B;
+}
+
+.operation-btn {
     border-color: #35ABAB;
     box-shadow: -3px 3px #35ABAB;
     background-color: #75DCD0;
     color: #ffffff;
 }
 
-#addition-button {
+.operation-btn:hover {
+    border-color: #3593ab;
+    box-shadow: -3px 3px #3593ab;
+    background-color: #92e1e6;
+}
+
+.number:hover {
+    border-radius: 4px 5px 10px 10px;
+    border: 3px solid #8e5eb3;
+    box-shadow: -3px 3px #8e5eb3;
+    background-color: #edfdff;
+    color: #000000;
+}
+
+#carrot-btn {
     padding: 0;
-    margin: 0 0 55px 0;
+    margin-bottom: 3em;
     background-color: transparent;
     border: none;
     box-shadow: none;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#carrot-btn > span {
+    position: absolute;
+    z-index: 10;
+    font-size: 2.5rem;
+    color:#fff;
+    margin-top: 0.9em;
+}
+
+#carrot-btn > img {
+    position: relative;
 }
 
 .tail {

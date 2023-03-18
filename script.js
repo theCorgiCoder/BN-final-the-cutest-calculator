@@ -1,48 +1,64 @@
 // All logic for Calculator
-
 const buttons = document.querySelectorAll("button");
-// const display = document.querySelector("display-number");
-// console.log(display);
 
+let displayValue = "0";
+let firstOperator = null;
+let secondOperator = null;
+let num1 = null;
+let num2 = null;
+let result = null;
+
+function updateDisplay() {
+  const display = document.getElementById("display");
+  display.innerText = displayValue;
+  console.log("updated display");
+}
+
+updateDisplay();
+console.log(displayValue);
+
+//listeners for button clicks
 buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const action = button.dataset.action;
-
-    if (action === "add") {
-      console.log("Addition");
-    } else if (action === "subtract") {
-      console.log("subtraction");
-    } else if (action === "divide") {
-      console.log("division");
-    } else if (action === "multiply") {
-      console.log("multiplication");
-    } else if (action === "equals") {
-      console.log("equals to");
-    } else if (action === "clear") {
-      console.log("clear all");
-    } else if (action === "decimal") {
-      console.log("decimal point");
-    } else if (action === "negative-positive-integer") {
-      console.log("negative or positive");
+  button.addEventListener("click", function (e) {
+    const inputValue = button.classList;
+    const innerText = button.innerText;
+    if (inputValue.contains("number")) {
+      inputNumbers(innerText);
+      updateDisplay();
+    } else if (inputValue.contains("operator")) {
+      inputOperators(innerText);
+      updateDisplay();
     } else {
-      console.log("number");
+      console.log(innerText);
     }
   });
 });
 
-function operate(num1, operator, num2) {
-  let result = "";
-  if (operator === "add") {
-    result = num1 + num2;
-  } else if (operator === "subtract") {
-    result = num1 - num2;
-  } else if (operator === "multiply") {
-    result = num1 * num2;
-  } else if (operator === "divide") {
-    result = num1 / num2;
+function inputNumbers(num) {
+  //first input
+  if (displayValue === "0" || displayValue === 0) {
+    displayValue = num;
+  } else {
+    displayValue += num;
   }
-
-  return result;
 }
 
-// console.log(operate(20, "divide", 2));
+function useOperators(operator) {}
+
+function operate(n1, n2, op) {
+  if (op === "-") {
+    return n1 - n2;
+  } else if (op === "+") {
+    return n1 + n2;
+  } else if (op === "/") {
+    if (n2 === 0) {
+      return "Nope, go home.";
+    } else {
+      return n1 / n2;
+    }
+  } else if (op === "*") {
+    return n1 * n2;
+  }
+}
+
+function inputOperators(operator) {}
