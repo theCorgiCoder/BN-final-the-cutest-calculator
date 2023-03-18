@@ -1,50 +1,48 @@
 // All logic for Calculator
 const buttons = document.querySelectorAll("button");
+const display = document.getElementById("display");
 
 let displayValue = "0";
 let result = ""; // is an empty string or null better?
 
 function updateDisplay() {
-  const display = document.getElementById("display");
   display.innerText = displayValue;
-  console.log("updated display");
 }
-
-updateDisplay();
-
-//listeners for button clicks
-
-function onClickHandler() {
+//Listens for all button click events and then calls handler function
+function onClick() {
   buttons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      const inputValue = button.classList;
-      const innerText = button.innerText;
-      if (inputValue.contains("number")) {
-        inputNumbers(innerText);
-        updateDisplay();
-      } else if (inputValue.contains("operator")) {
-        useOperators(innerText);
-        updateDisplay();
-      } else if (inputValue.contains("clear")) {
-        inputClearAll(innerText);
-        updateDisplay();
-      } else if (inputValue.contains("delete")) {
-        inputDelete(innerText);
-        updateDisplay();
-      } else if (inputValue.contains("equals")) {
-        inputEquals(innerText);
-        updateDisplay();
-      } else if (inputValue.contains("decimal")) {
-        inputAddDecimal(innerText);
-        updateDisplay();
-      } else {
-        console.log(innerText);
-      }
-    });
+    button.addEventListener("click", onClickHandler(button));
   });
 }
 
-onClickHandler();
+onClick();
+
+function onClickHandler(button) {
+  button.addEventListener("click", function () {
+    const inputValue = button.classList;
+    const innerText = button.innerText;
+    if (inputValue.contains("number")) {
+      inputNumbers(innerText);
+      updateDisplay();
+    } else if (inputValue.contains("operator")) {
+      useOperators(innerText);
+      updateDisplay();
+    } else if (inputValue.contains("clear")) {
+      inputClearAll(innerText);
+      updateDisplay();
+    } else if (inputValue.contains("equals")) {
+      inputEquals(innerText);
+      updateDisplay();
+    } else if (inputValue.contains("decimal")) {
+      inputAddDecimal(innerText);
+      updateDisplay();
+    } else if (inputValue.contains("delete")) {
+      inputDelete();
+    } else {
+      console.log(innerText);
+    }
+  });
+}
 
 function inputNumbers(num) {
   //first input
@@ -56,13 +54,12 @@ function inputNumbers(num) {
   }
 }
 
-function inputClearAll() {
-  return console.log("clear all");
+function inputDelete() {
+  display.innerText = display.innerText.slice(0, -1);
 }
 
-function inputDelete() {
-  return console.log("delete/backspace");
-  // splice method on currentValue of display
+function inputClearAll() {
+  return console.log("clear all");
 }
 
 function inputAddDecimal() {
