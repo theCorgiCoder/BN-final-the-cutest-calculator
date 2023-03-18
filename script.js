@@ -2,11 +2,11 @@
 const buttons = document.querySelectorAll("button");
 
 let displayValue = "0";
-let firstOperator = null;
-let secondOperator = null;
-let num1 = null;
-let num2 = null;
-let result = null;
+let op1 = "";
+let op2 = "";
+let num1 = "";
+let num2 = "";
+let result = ""; // is an empty string or null better?
 
 function updateDisplay() {
   const display = document.getElementById("display");
