@@ -2,10 +2,6 @@
 const buttons = document.querySelectorAll("button");
 
 let displayValue = "0";
-let op1 = "";
-let op2 = "";
-let num1 = "";
-let num2 = "";
 let result = ""; // is an empty string or null better?
 
 function updateDisplay() {
@@ -30,6 +26,18 @@ function onClickHandler() {
       } else if (inputValue.contains("operator")) {
         inputOperators(innerText);
         updateDisplay();
+      } else if (inputValue.contains("clear")) {
+        inputClearAll();
+        updateDisplay();
+      } else if (inputValue.contains("delete")) {
+        inputDelete();
+        updateDisplay();
+      } else if (inputValue.contains("equals")) {
+        inputEquals();
+        updateDisplay();
+      } else if (inputValue.contains("decimal")) {
+        inputAddDecimal();
+        updateDisplay();
       } else {
         console.log(innerText);
       }
@@ -49,8 +57,28 @@ function inputNumbers(num) {
   }
 }
 
+function inputClearAll() {
+  return console.log("clear all");
+}
+
+function inputDelete() {
+  return console.log("delete/backspace");
+  // splice method on currentValue of display
+}
+
+function inputAddDecimal() {
+  // don't use more than 1x
+  //limit 0's as 1st number
+  return console.log("add .");
+}
+
+function inputEquals() {
+  return console.log("equals");
+}
+
 function useOperators(operator) {
   //logic for operators
+  result = operate(Number, Number, operator); //result needs to equal the operate function,
 }
 
 function operate(n1, n2, op) {
