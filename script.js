@@ -18,24 +18,30 @@ updateDisplay();
 console.log(displayValue);
 
 //listeners for button clicks
-buttons.forEach((button) => {
-  button.addEventListener("click", function (e) {
-    const inputValue = button.classList;
-    const innerText = button.innerText;
-    if (inputValue.contains("number")) {
-      inputNumbers(innerText);
-      updateDisplay();
-    } else if (inputValue.contains("operator")) {
-      inputOperators(innerText);
-      updateDisplay();
-    } else {
-      console.log(innerText);
-    }
+
+function onClickHandler() {
+  buttons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      const inputValue = button.classList;
+      const innerText = button.innerText;
+      if (inputValue.contains("number")) {
+        inputNumbers(innerText);
+        updateDisplay();
+      } else if (inputValue.contains("operator")) {
+        inputOperators(innerText);
+        updateDisplay();
+      } else {
+        console.log(innerText);
+      }
+    });
   });
-});
+}
+
+onClickHandler();
 
 function inputNumbers(num) {
   //first input
+  //need parameters for if a operator was used
   if (displayValue === "0" || displayValue === 0) {
     displayValue = num;
   } else {
