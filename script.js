@@ -43,7 +43,9 @@ function inputNumbers(num) {
   }
 }
 
-function useOperators(operator) {}
+function useOperators(operator) {
+  //logic for operators
+}
 
 function operate(n1, n2, op) {
   if (op === "-") {
@@ -60,5 +62,3 @@ function operate(n1, n2, op) {
     return n1 * n2;
   }
 }
-
-function inputOperators(operator) {}
