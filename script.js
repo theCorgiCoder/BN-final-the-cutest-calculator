@@ -11,7 +11,6 @@ function updateDisplay() {
 }
 
 updateDisplay();
-console.log(displayValue);
 
 //listeners for button clicks
 
@@ -24,19 +23,19 @@ function onClickHandler() {
         inputNumbers(innerText);
         updateDisplay();
       } else if (inputValue.contains("operator")) {
-        inputOperators(innerText);
+        useOperators(innerText);
         updateDisplay();
       } else if (inputValue.contains("clear")) {
-        inputClearAll();
+        inputClearAll(innerText);
         updateDisplay();
       } else if (inputValue.contains("delete")) {
-        inputDelete();
+        inputDelete(innerText);
         updateDisplay();
       } else if (inputValue.contains("equals")) {
-        inputEquals();
+        inputEquals(innerText);
         updateDisplay();
       } else if (inputValue.contains("decimal")) {
-        inputAddDecimal();
+        inputAddDecimal(innerText);
         updateDisplay();
       } else {
         console.log(innerText);
