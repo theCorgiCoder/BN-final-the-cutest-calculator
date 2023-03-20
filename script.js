@@ -49,14 +49,17 @@ function onClickHandler(button) {
       updateDisplay();
     } else if (inputValue.contains("delete")) {
       inputDelete();
+    } else if (inputValue.contains("percentage")) {
+      inputPercentage(innerText);
+      updateDisplay();
     } else {
-      console.log(innerText);
+      return;
     }
   });
 }
 
 function inputNumbers(num) {
-  //handles first input
+  //handles first number input
   if (operation1 === null) {
     if (displayValue === "0" || displayValue === 0) {
       displayValue = num;
@@ -96,6 +99,7 @@ function inputNumbers(num) {
       );
     }
   } else if (displayValue === number1) {
+    //handles second number input
     displayValue = num;
     number2 = displayValue;
     console.log(
@@ -122,7 +126,6 @@ function inputNumbers(num) {
   }
 }
 
-// Currently not working correctly....
 function useOperators(operatorPressed) {
   if (display.innerText === "") {
     return;
@@ -153,6 +156,11 @@ function inputAddDecimal(decimal) {
   }
 }
 
+function inputPercentage() {
+  displayValue = number1 / 100;
+  console.log(number1);
+}
+
 function clearDisplay() {
   displayValue = "0";
   result = null;
@@ -164,10 +172,11 @@ function clearDisplay() {
 
 function inputEquals() {
   if (operation1 !== null) {
-    if (displayValue === "No") {
+    result = operate(Number(number1), Number(number2), operation1);
+    number2 = displayValue;
+    if (result === "no") {
       displayValue = "Nope, stop it.";
     } else {
-      result = operate(Number(number1), Number(number2), operation1);
       displayValue = result;
       number1 = displayValue;
       number2 = null;
@@ -175,6 +184,21 @@ function inputEquals() {
       operation2 = null;
       result = null;
     }
+  } else if (operation2 !== null) {
+    number2 = displayValue;
+    result = operate(Number(number1), Number(number2), operation1);
+    if (result === "no") {
+      displayValue = "Nope, stop it.";
+    } else {
+      displayValue = result;
+      number1 = displayValue;
+      number2 = null;
+      operation1 = null;
+      operation2 = null;
+      result = null;
+    }
+  } else {
+    return;
   }
 }
 
@@ -187,7 +211,7 @@ function operate(n1, n2, op) {
     return n1 * n2;
   } else if (op === "÷") {
     if (n2 === 0) {
-      return "No";
+      return "no";
     } else {
       return n1 / n2;
     }
