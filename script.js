@@ -163,28 +163,33 @@ function clearDisplay() {
 }
 
 function inputEquals() {
-  if (!display.innerText) {
-    return;
+  if (operation1 !== null) {
+    if (displayValue === "No") {
+      displayValue = "Nope, stop it.";
+    } else {
+      result = operate(Number(number1), Number(number2), operation1);
+      displayValue = result;
+      number1 = displayValue;
+      number2 = null;
+      operation1 = null;
+      operation2 = null;
+      result = null;
+    }
   }
-  result = operate(Number(number1), Number(number2), operation1);
-  displayValue = result;
-  result = null;
-
-  console.log("equals");
 }
 
 function operate(n1, n2, op) {
-  if (op === "-") {
+  if (op == "-") {
     return n1 - n2;
-  } else if (op === "+") {
+  } else if (op == "+") {
     return n1 + n2;
-  } else if (op === "/") {
+  } else if (op == "÷") {
     if (n2 === 0) {
       return (displayValue = "Nope, go home.");
     } else {
       return n1 / n2;
     }
-  } else if (op === "*") {
+  } else if (op == "x") {
     return n1 * n2;
   }
 }
@@ -194,13 +199,13 @@ function operate(n1, n2, op) {
     return n1 - n2;
   } else if (op === "+") {
     return n1 + n2;
-  } else if (op === "/") {
+  } else if (op === "x") {
+    return n1 * n2;
+  } else if (op === "÷") {
     if (n2 === 0) {
-      return "Nope, go home.";
+      return "No";
     } else {
       return n1 / n2;
     }
-  } else if (op === "*") {
-    return n1 * n2;
   }
 }
