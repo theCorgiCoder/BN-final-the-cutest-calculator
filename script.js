@@ -55,11 +55,7 @@ function onClickHandler(button) {
 function inputNumbers(num) {
   //handles first number input
   if (operation1 === null) {
-    if (
-      displayValue === "0" ||
-      displayValue === 0 ||
-      displayValue === "Nope, stop it."
-    ) {
+    if (displayValue === "0" || displayValue === 0) {
       displayValue = num;
       number1 = displayValue;
     } else if (displayValue === number1) {
@@ -84,12 +80,20 @@ function useOperators(operatorPressed) {
     return;
   }
   if (operation1 === null) {
+    if (displayValue === "Nope, stop it.") {
+      clearDisplay();
+      return;
+    }
     operation1 = operatorPressed;
   } else if (operation1 !== null && operation2 === null) {
     updateResult(operatorPressed);
   } else if (operation1 !== null && operation2 !== null) {
     updateResult(operatorPressed);
   } else {
+    if (displayValue === "Nope, stop it.") {
+      clearDisplay();
+      return;
+    }
     operation2 = operatorPressed;
   }
 }
@@ -137,20 +141,12 @@ function inputPercentage() {
 }
 
 function clearDisplay() {
-  if (displayValue === "Nope, stop it.") {
-    result = null;
-    operation1 = null;
-    operation2 = null;
-    number1 = null;
-    number2 = null;
-  } else {
-    displayValue = "0";
-    result = null;
-    operation1 = null;
-    operation2 = null;
-    number1 = null;
-    number2 = null;
-  }
+  displayValue = "0";
+  result = null;
+  operation1 = null;
+  operation2 = null;
+  number1 = null;
+  number2 = null;
 }
 
 function inputEquals() {
