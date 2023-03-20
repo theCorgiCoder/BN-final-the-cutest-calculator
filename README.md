@@ -1,10 +1,10 @@
-# JS Calculator with STYLE
+# JS Cute-a-lator!
 
 ## Developer: Elaine B. aka CorgiCoder
 
 ## The Project
 
-I wanted to practice javascript by building a calculator application.
+Building a functional basic calculator using only html, css, and javascript!
 
 ## Live Site Link
 
