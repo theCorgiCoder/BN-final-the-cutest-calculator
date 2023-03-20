@@ -10,9 +10,7 @@ let operation1 = null;
 let operation2 = null;
 
 function updateDisplay() {
-  // display.innerText = parseFloat(displayValue).toFixed(6);
   display.innerText = displayValue;
-  console.log("UPDATE: ", number1, operation1, number2, operation2);
 }
 onClick();
 //Listens for all button click events and then calls handler function
@@ -137,7 +135,6 @@ function inputAddDecimal(decimal) {
 
 function inputPercentage() {
   displayValue = number1 / 100;
-  console.log(number1);
 }
 
 function clearDisplay() {
