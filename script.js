@@ -128,11 +128,8 @@ function useOperators(operatorPressed) {
     return;
   }
   if (operation1 === null) {
-    if (number1 !== null && number2 === null) {
-      operation1 = operatorPressed;
-      console.log("opInput1: ", number1, operation1, number2);
-      return;
-    }
+    operation1 = operatorPressed;
+    console.log("opInput1: ", number1, operation1, number2);
   } else {
     operation2 = operatorPressed;
     console.log("opInput2: ", number1, operation1, number2, operation2);
@@ -169,10 +166,27 @@ function inputEquals() {
   if (!display.innerText) {
     return;
   }
-  result = operate(Number(firstNumber), Number(secondNumber), operatorPressed);
+  result = operate(Number(number1), Number(number2), operation1);
   displayValue = result;
+  result = null;
 
   console.log("equals");
+}
+
+function operate(n1, n2, op) {
+  if (op === "-") {
+    return n1 - n2;
+  } else if (op === "+") {
+    return n1 + n2;
+  } else if (op === "/") {
+    if (n2 === 0) {
+      return (displayValue = "Nope, go home.");
+    } else {
+      return n1 / n2;
+    }
+  } else if (op === "*") {
+    return n1 * n2;
+  }
 }
 
 function operate(n1, n2, op) {
