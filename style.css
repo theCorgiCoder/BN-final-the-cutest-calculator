@@ -126,14 +126,14 @@ button:active {
     box-shadow: -3px 3px #DC508B;
 }
 
-.operation-btn {
+.operation-btn, .delete {
     border-color: #35ABAB;
     box-shadow: -3px 3px #35ABAB;
     background-color: #75DCD0;
     color: #ffffff;
 }
 
-.operation-btn:hover {
+.operation-btn:hover, .delete:hover {
     border-color: #3593ab;
     box-shadow: -3px 3px #3593ab;
     background-color: #92e1e6;
