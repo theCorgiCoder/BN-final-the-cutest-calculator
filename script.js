@@ -8,9 +8,13 @@ let number1 = null;
 let number2 = null;
 let operation1 = null;
 let operation2 = null;
+let percentage = null;
 
 function updateDisplay() {
   display.innerText = displayValue;
+  if (displayValue.length > 18) {
+    display.innerText = displayValue.substring(0, 18);
+  }
 }
 onClick();
 //Listens for all button click events and then calls handler function
@@ -42,7 +46,7 @@ function onClickHandler(button) {
     } else if (inputValue.contains("delete")) {
       inputDelete();
     } else if (inputValue.contains("percentage")) {
-      inputPercentage(innerText);
+      inputPercentage(displayValue);
       updateDisplay();
     } else {
       return;
@@ -133,8 +137,13 @@ function inputAddDecimal(decimal) {
   }
 }
 
-function inputPercentage() {
-  displayValue = number1 / 100;
+function inputPercentage(number) {
+  displayValue = (number / 100).toString();
+  number1 = displayValue;
+  number2 = null;
+  operation1 = null;
+  operation2 = null;
+  result = null;
 }
 
 function clearDisplay() {
