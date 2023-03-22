@@ -232,7 +232,6 @@ button:active {
 
     #carrot-btn {
         height: 35%;
-        border: 1px solid red;
         align-items: center;
         margin: 0;
     }
