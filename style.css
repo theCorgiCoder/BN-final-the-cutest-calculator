@@ -1,5 +1,5 @@
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: 'Patrick Hand SC', sans-serif;
 }
 
@@ -30,6 +30,7 @@ main {
 .ear-container {
     display: flex;
     width: 340px;
+    height: auto 0;
     justify-content: space-around;
 }
 
@@ -40,7 +41,7 @@ main {
 .calculator {
     display: flex;
     flex-direction: column;
-    z-index: 5;
+    z-index: 10;
     width: 340px;
     height: 500px;
     border-radius: 31px;
@@ -182,4 +183,70 @@ button:active {
     border: 3px solid #C766BD;
     border-radius: 100%;
     box-shadow: -5px 4px #C766BD;
+}
+
+/***MEDIA QUERIES***/
+
+@media only screen and (max-width: 375px) {
+    main {
+        margin: 0 1em 1em 1em;
+        padding: 0;
+        justify-content: flex-start;
+    }
+    
+    .ear-container {
+        height: 30%;
+        width: 80%;
+        align-items: flex-end;
+        margin: 0;
+    }
+
+    .ear {
+        height: 95%;
+        padding: 0;
+    }
+    .calculator {
+        width: 70%;
+        height: 50%;
+        padding: 10px 20px 20px 20px;
+        box-shadow: -5px 5px #C766BD;
+        border-radius: 20px;
+    }
+
+    .calculator-display{
+        border-radius: 15px;
+    }
+
+    .column {
+        justify-content: space-around;
+        padding-left: 5px;
+    }
+
+    button {
+        width: 95%;
+        height: 15%;
+        font-size: 1rem;
+    }
+
+    #carrot-btn {
+        height: 35%;
+        border: 1px solid red;
+        align-items: center;
+        margin: 0;
+    }
+
+    #carrot-btn img {
+        width: 95%;
+    }
+
+    #carrot-btn span {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .tail {
+        width: 20%;
+        height: 10%;
+        box-shadow: -3px 2px #C766BD;
+    }
 }
